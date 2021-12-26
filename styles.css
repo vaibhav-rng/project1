@@ -17,7 +17,6 @@ html, body{
     background-color: white;
     border-radius: 10px;
     border-color: rgb(201, 165, 201);  /* here */
-    
 }
 
 .textbx
@@ -44,6 +43,7 @@ html, body{
 .btn:hover
 {
     background-color: rgb(139, 78, 139); 
+    cursor: pointer;
 }
 
 .textbx:focus
