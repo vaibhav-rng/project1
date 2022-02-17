@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Questions Page</title>
 	<link rel="stylesheet" type="text/css" href="questions.css">
+	<script src="questions.js"></script>
 </head>
 <body>
 	<div id="topnav">
@@ -14,10 +15,15 @@
 		<span class="topn">Take Quiz</span>
 		<span class="topn">contact us</span>
 	</div>
-	<input type="text" name="timer" id="timer" readonly value="10:00">
+	<br>
+	<div id="secTopNav">
+		<label id="UserName" name="un" class="SecNav">SomeUser@123</label>
+		<input type="text" name="timer" id="timer" readonly value="10:00">
+		<input type="image" name="sighout" id="signout" src="images/signout.png">
+	</div>
 	<div id="center">
 		<div id="questionBox">
-			<button id="audio">Audio</button>
+			<input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
 			<p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
 			<div class="aBox">
 			<span class="array">1</span>
@@ -32,36 +38,32 @@
 			<span class="array">10</span>
 			</div>
 		</div>
-		<button id="rightSlide" class="slidebtn">>></button>
-		<button id="leftSlide" class="slidebtn"><<</button>
 		<div id="options">
 			<div id="leftOptions">
-				<input type="radio" name="options" id="opA" value="opA" class="leftOP">
-				<label for="opA" id="opAL" class="leftOP">Option A</label>
+				<input type="button" name="options" id="opA" value="Option A" class="leftOP" onclick="selOp(1)">
 				<br>
-				<input type="radio" name="options" id="opC" value="opA" class="leftOP">
-				<label for="opC" id="opCL" class="leftOP">Option C</label>
+				<input type="button" name="options" id="opC" value="Option B" class="leftOP" onclick="selOp(3)">
 			</div>
 			<div id="rightOptions">
-				<input type="radio" name="options" id="opB" value="opA" class="leftOP">
-				<label for="opB" id="opBL" class="leftOP">Option B</label>
+				<input type="button" name="options" id="opB" value="Option C" class="leftOP" onclick="selOp(2)">
 				<br>
-				<input type="radio" name="options" id="opD" value="opA" class="leftOP">
-				<label for="opD" id="opDL" class="leftOP">Option D</label>
+				<input type="button" name="options" id="opD" value="Option D" class="leftOP" onclick="selOp(4)">
 			</div>
 		</div>
 	</div>
 	<div class="navBox">
-		<span class="bnav">1</span>
-		<span class="bnav">2</span>
-		<span class="bnav">3</span>
-		<span class="bnav">4</span>
-		<span class="bnav">5</span>
-		<span class="bnav">6</span>
-		<span class="bnav">7</span>
-		<span class="bnav">8</span>
-		<span class="bnav">9</span>
-		<span class="bnav">10</span>
+		<button class="bnav" onclick="slide(0)"><<</button>
+		<button class="bnav">1</button>
+		<button class="bnav">2</button>
+		<button class="bnav">3</button>
+		<button class="bnav">4</button>
+		<button class="bnav">5</button>
+		<button class="bnav">6</button>
+		<button class="bnav">7</button>
+		<button class="bnav">8</button>
+		<button class="bnav">9</button>
+		<button class="bnav">10</button>
+		<button class="bnav" onclick="slide(1)">>></button>
 	</div>
 </body>
 </html>
