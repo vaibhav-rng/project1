@@ -1,6 +1,10 @@
 
 section
 {
+<<<<<<< HEAD
+=======
+    background-color: rgb(207, 172, 207);
+>>>>>>> 7702d4224a2551d87407aafc902b95264fe761ad
     border-radius: 10px solid rgb(194, 29, 29);
     display: flex;
     align-items: center;
@@ -10,7 +14,11 @@ section
 }
 .paper
 {
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-color: rgb(177, 129, 177);
+>>>>>>> 7702d4224a2551d87407aafc902b95264fe761ad
     border: blueviolet;
     border-radius: 10px;
     height: 400px;
