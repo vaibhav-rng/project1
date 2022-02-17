@@ -4,24 +4,81 @@
 <head>
     <title>Learn</title>
     <style>
-        div {
+        box {
+           
             border: 1px solid black;
-            width: 50px;
-            height: 20px;
+            width: 100px;
+            height: 90px;
             float: left;
-            margin: 10px;
+            margin: 30px;
             text-align: center;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            font-weight: 800;
+            font-family:monospace;
+            font-size:70px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .btn
+        {
+             padding: 5px;  
+             border-radius: 10px;
+             padding-left: 20px;
+             padding-right: 20px;
+             background-color: rgb(170, 104, 170);  /* here */
+             color: white;
+             font-weight: 800;
+              border:hidden;  
+         }
+        .btn:hover
+        {
+             background-color: rgb(139, 78, 139); 
+             cursor: pointer;
+        }
+        
+        .textbx
+        {
+        padding: 10px;
+        background-color: white;
+        border: hidden;
+        border-radius: 10px;    /* here */
+        font-family:monospace;  /* here */
         }
         
         #main {
-            border: 1px solid blue;
+        
             width: cover;
-            height: 120px;
+            height: 170px;
+            border-radius: 10px;
+            background-color: rgb(201, 165, 201);
         }
+        .textbx:focus
+            {
+             background-color: rgb(199, 195, 195);
+             outline: none;
+            }
+            .topn{
+	            float: left;
+	            padding: 5px;
+	            text-align: center;
+	            font-size: 22px;
+                margin-left: 15px;
+                font-family:monospace; 
+                font-weight: 100;
+                margin-top: 2px;
+                }
+            .topn:hover{
+	            background-color: rgb(139, 78, 139); 
+	            cursor: pointer;
+                border-radius: 10px;
+                color: white;
+            }
     </style>
     <script>
         function add() {
-            var a = document.createElement("div");
+            var a = document.createElement("box");
             var sp = document.createElement("span");
             var inp = document.getElementById("inp");
             sp.textContent = inp.value;
@@ -32,22 +89,56 @@
         }
 
         function remove() {
-            a = document.getElementsByTagName("div");
+            a = document.getElementsByTagName("box");
             a[0].remove()
         }
     </script>
 </head>
 
 <body>
+    <div style="background-color: rgb(201, 165, 201); height: 40px;margin-bottom: -50px; border-radius: 10px;">
+		<span onclick="window.location.href='./register.html'"  class="topn" >Home</span>
+		<span class="topn">Learn</span>
+		<span class="topn">About us</span>
+		<span onclick="window.location.href='./level.html'"  class="topn">Take Quiz</span>
+        <span class="topn">Simulation</span>
+		<span class="topn">contact us</span>
+	</div>
+    <br>
+    <br>
+    <h2 style="text-align: center;font-family:monospace; margin-top: 30px; font-weight:800;">Total Elements:<span style="color:rgb(66, 202, 66);">10</span></h2>
     <section id="main"></section>
     <br>
-    <label>INSERTION: </label>
-    <input type="text" id="inp" placeholder="Enter the element">
-    <button onclick="add()">ADD</button>
-    <br>
-    <br>
-    <label>DELETION: </label>
-    <button onclick="remove()">REMOVE</button>
+<div style="  background-color: rgb(201, 165, 201);border-radius: 10px;height: 210px;">
+   <div style="margin-left: 30px; padding-top: 10px; font-family: monospace; color: white;">
+      <label style="font-size:x-large;">INSERTION: </label>
+      <input type="text" class="textbx" id="inp" placeholder="Enter the element">
+      <button class="btn"  onclick="add()"">ADD</button>
+      <button class="btn" onclick="add()">Add at the start</button>
+      <button class="btn" onclick="add()">Add at the end</button>
+
+      <br>
+      <br>
+      <label style="font-size:x-large;">DELETION: </label>
+      <input class="textbx" style="margin-left: 10px;" type="text" id="inp" placeholder="Enter the element">
+      <button class="btn" onclick="remove()">REMOVE</button> 
+    
+      <button class="btn" onclick="remove()">Delete at the End</button>
+      <button class="btn" onclick="remove()">Delete at the Start</button>
+      <br>
+      <br>
+      <label style="font-size:x-large;" >SORTING: </label>
+      <button class="btn" style="margin-left: 20px;" onclick="remove()">Assending</button>
+      <button class="btn"  onclick="remove()">Decending</button>
+      <br>
+      <br>
+      <label style="font-size:x-large;">Search: </label>
+       <input class="textbx" style="margin-left: 30px;" type="text" id="inp" placeholder="Enter the element">
+      <button class="btn" onclick="remove()">Search</button>
+      
+   </div>
+</div>
+
 </body>
 
 </html>
