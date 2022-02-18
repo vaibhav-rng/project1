@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Welcome</title>
+    <script>
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: rgb(201, 165, 201);
+        }
+        
+        nav {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        
+        .navBox {
+            margin-top: 50px;
+        }
+        
+        .nave {
+            padding: 18px;
+            border-right: 2px solid black;
+            font-size: 22px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .nave:hover {
+            background-color: rgb(139, 78, 139);
+            cursor: pointer;
+        }
+        
+        #username {
+            font-size: 22px;
+            margin-left: 2%;
+        }
+        
+        #timer {
+            background-color: rgb(201, 165, 201);
+            border: none;
+            border-top: 5px solid black;
+            border-bottom: 5px solid black;
+            border-radius: 16px;
+            margin: 5px;
+            margin-left: 33%;
+            padding: 5px;
+            width: 120px;
+            height: 35px;
+            text-align: center;
+            font-size: 25px;
+            margin-left: 38%;
+        }
+        
+        #timer:hover {
+            cursor: default;
+        }
+        
+        #timer:focus {
+            outline: none;
+        }
+        
+        #signout {
+            width: 30px;
+            height: 30px;
+            margin-left: 38%;
+        }
+        
+        section {
+            border: 1px solid red;
+            width: 75%;
+            height: 350px;
+            margin-left: 11%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 18px;
+            overflow: hidden;
+        }
+        /* div {
+            border: 1px solid black;
+        } */
+        
+        #main {
+            display: flex;
+            width: fit-content;
+            height: 330px;
+        }
+        
+        .qs {
+            margin: 0px 29px;
+            width: 1100px;
+        }
+        
+        #questions {
+            font-size: 30px;
+            margin: 5px;
+            margin-bottom: 10px;
+        }
+        
+        #AudBtn {
+            width: 30px;
+            height: 30px;
+            float: right;
+        }
+        
+        .aBox {
+            width: fit-content;
+            padding: 10px;
+            margin-left: 40%;
+        }
+        
+        .array {
+            border: 1px solid black;
+            padding: 5px;
+            font-size: 18px;
+        }
+        
+        #questionBox {
+            margin: 10px;
+            padding: 5px;
+        }
+        
+        .options {
+            list-style-type: none;
+            margin: 25px 0 0 0;
+            padding: 0;
+            display: flex;
+            margin: 50px 70px;
+        }
+        
+        .options li {
+            margin: 0 5px 0 0;
+            width: 100px;
+            height: 40px;
+            position: relative;
+            padding: 20px;
+            margin: 0px 50px;
+        }
+        
+        .options label,
+        .options input {
+            text-align: center;
+            vertical-align: middle;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        
+        .options input[type="radio"] {
+            opacity: 0.01;
+            z-index: 100;
+        }
+        
+        .options input[type="radio"]:checked+label,
+        .Checked+label {
+            background: rgb(201, 165, 201);
+        }
+        
+        .options label {
+            padding: 5px;
+            border: 1px solid rgb(34, 28, 28);
+            cursor: pointer;
+            z-index: 90;
+        }
+        
+        .options label:hover {
+            background: rgb(220, 207, 223);
+        }
+        
+        .navBox {
+            background-color: rgb(201, 165, 201);
+            border-radius: 12px;
+            width: fit-content;
+            height: fit-content;
+            margin-left: 25%;
+        }
+        
+        .bnav {
+            float: left;
+            text-align: center;
+            border: 1px solid rgb(139, 78, 139);
+            border-radius: 12px;
+            padding: 5px;
+            margin: 5px;
+            font-size: 28px;
+            background-color: rgb(201, 165, 201);
+            width: 50px;
+        }
+        
+        .bnav:hover {
+            background-color: rgb(139, 78, 139);
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        var interval = setInterval(timer, 1000)
+        var temp = 599;
+
+        function timer() {
+            var min = Math.floor(temp / 60);
+            var sec = temp % 60;
+            if (sec < 10) {
+                var st = "0" + min.toString() + ":0" + sec.toString();
+            } else {
+                var st = "0" + min.toString() + ":" + sec.toString();
+            }
+            temp = temp - 1;
+            if (temp < 0) {
+                var st = "Time UP!!"
+                clearInterval(interval)
+            }
+            document.getElementById("timer").value = st;
+        }
+        var x = 0;
+
+        function nextQ(t) {
+            x = x + (1161 * t);
+            res = "transform:".concat("translateX(", x.toString(), "px);", "transition-duration: 2s;");
+            var o = document.getElementById("main");
+            o.style.cssText = res
+            console.log(x);
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a class="nave" href="#">Home</a>
+        <a class="nave">Learn</a>
+        <a class="nave">About US</a>
+        <a class="nave">Take Quiz</a>
+        <a class="nave">Contact us</a>
+    </nav>
+    <nav>
+        <p id="username" class="snav">@SomeUSer</p>
+        <input type="text" name="timer" id="timer" class="snav" readonly value="10:00">
+        <input type="image" name="sighout" id="signout" class="snav" src="images/signout.png" alt="signout" title="signout">
+    </nav>
+    <section>
+        <div id="main">
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+                <ul class="options">
+                    <li>
+                        <input type="radio" id="a" name="ops" />
+                        <label for="a">OPTION A</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="b" name="ops" />
+                        <label for="b">OPTION C</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="c" name="ops" />
+                        <label for="c">OPTION C</label>
+                    </li>
+                    <li>
+                        <input type="radio" id="d" name="ops" />
+                        <label for="d">OPTION D</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="qs">
+                <div id="questionBox">
+                    <input type="image" name="AudioBtn" id="AudBtn" alt="audio" src="images/audio.png">
+                    <p id="questions">1. Some random question about some random array for which you can give some random answer????</p>
+                    <div class="aBox">
+                        <span class="array">1</span>
+                        <span class="array">2</span>
+                        <span class="array">3</span>
+                        <span class="array">4</span>
+                        <span class="array">5</span>
+                        <span class="array">6</span>
+                        <span class="array">7</span>
+                        <span class="array">8</span>
+                        <span class="array">9</span>
+                        <span class="array">10</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <nav class="navBox">
+        <button class="bnav" onclick="nextQ(1)"><<</button>
+        <button class="bnav">1</button>
+        <button class="bnav">2</button>
+        <button class="bnav">3</button>
+        <button class="bnav">4</button>
+        <button class="bnav">5</button>
+        <button class="bnav">6</button>
+        <button class="bnav">7</button>
+        <button class="bnav">8</button>
+        <button class="bnav">9</button>
+        <button class="bnav">10</button>
+        <button class="bnav" onclick="nextQ(-1)">>></button>
+    </nav>
+
+</body>
+
+</html>
