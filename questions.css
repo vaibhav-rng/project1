@@ -8,12 +8,15 @@ body{
 #topnav{
 	padding: 1px;
 }
-.topn{
+.topn {
 	float: left;
-	border-right: 2px solid black;
 	padding: 5px;
 	text-align: center;
-	font-size: 22px;	
+	font-size: 22px;
+	margin-left: 15px;
+	font-family: monospace;
+	font-weight: 100;
+	margin-top: 2px;
 }
 .topn:hover{
 	background-color: rgb(139, 78, 139); 
@@ -32,9 +35,7 @@ body{
 }
 #timer{
 	background-color: rgb(201, 165, 201);
-	border: none;
-	border-top: 5px solid black;
-	border-bottom: 5px solid black;
+	border: 2px solid white;
 	border-radius: 16px;
 	margin: 5px;
 	margin-left: 33%;
@@ -63,6 +64,12 @@ body{
 	margin:5% 10%;
 	height: 400px;
     box-shadow: 5px 5px 30px 15px rgb(139, 78, 139);
+}
+.topn:hover {
+	background-color: rgb(139, 78, 139);
+	cursor: pointer;
+	border-radius: 10px;
+	color: white;
 }
 #questions{
 	font-size: 30px;

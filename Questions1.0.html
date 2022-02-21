@@ -7,19 +7,24 @@
 	<link rel="stylesheet" type="text/css" href="questions.css">
 	<script src="questions.js"></script>
 </head>
-<body>
-	<div id="topnav">
-		<span class="topn">Home</span>
+<body >
+	<div style="border: 2px solid white; height: 40px;margin-bottom: -50px; border-radius: 10px; margin-top: 10px; background-color: rgb(201, 165, 201);  ">
+		<span onclick="window.location.href='./register.html'" class="topn">Home</span>
 		<span class="topn">Learn</span>
-		<span class="topn">about us</span>
-		<span class="topn">Take Quiz</span>
+		<span class="topn">About us</span>
+		<span onclick="window.location.href='./level.html'" class="topn">Take Quiz</span>
+		<span onclick="window.location.href='./learn.html'" class="topn">Simulation</span>
 		<span class="topn">contact us</span>
 	</div>
 	<br>
-	<div id="secTopNav">
+	<div id="secTopNav" style="padding-top: 20px;">
 		<label id="UserName" name="un" class="SecNav">SomeUser@123</label>
 		<input type="text" name="timer" id="timer" readonly value="10:00">
-		<input type="image" name="sighout" id="signout" src="images/signout.png">
+		<button  onclick="window.location.href='./ScoreBoard.html'"
+		style="margin-left:350px ; font-size:xx-large; padding:5px; padding-left: 10px; padding-right: 10px; background-color: rgb(207, 172, 207);border: solid white; border-radius: 10px; color: white; font-family: monospace;">
+		 Submit
+	    </button>
+
 	</div>
 	<div id="center">
 		<div id="questionBox">
