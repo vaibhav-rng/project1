@@ -1,0 +1,73 @@
+[
+    {
+        "id":1,
+        "question":" Which of these best describes an array?",
+        "o1":" A data structure that shows a hierarchical behavior",
+        "o2":"Container of objects of similar types",
+        "o3":"Arrays are immutable once initialised",
+        "o4":"Array is not a data structure",
+        "correct":"Container of objects of similar types",
+        "level":1
+
+    },
+    {
+        "id":2,
+        "question":"How do you initialize an array in C",
+        "o1":"int arr[3] = (1,2,3);",
+        "o2":" int arr(3) = {1,2,3}",
+        "o3":"int arr[3] = {1,2,3};",
+        "o4":"int arr(3) = (1,2,3);",
+        "correct":"int arr[3] = {1,2,3}",
+        "level":1
+    },
+    {
+        "id":3,
+        "question":"This set of Data Structure Multiple Choice Questions & Answers (MCQs) focuses on “Stack using Array”",
+        "o1":"option 1",
+        "o2":"option 2",
+        "o3":"option 3",
+        "o4":"option 4",
+        "correct":"option 2",
+        "level":1
+    },
+    {
+        "id":4,
+        "question":"hey this is level 1 question 2",
+        "o1":"option 1",
+        "o2":"option 2",
+        "o3":"option 3",
+        "o4":"option 4",
+        "correct":"option 1",
+        "level":1
+    },
+    {
+        "id":5,
+        "question":"hey this is level 1 question 3",
+        "o1":"option 1",
+        "o2":"option 2",
+        "o3":"option 3",
+        "o4":"option 4",
+        "correct":"option 1",
+        "level":1
+    },
+    {
+        "id":6,
+        "question":"hey this is level 1 question 4",
+        "o1":"option 1",
+        "o2":"option 2",
+        "o3":"option 3",
+        "o4":"option 4",
+        "correct":"option 1",
+        "level":1
+    },
+    {
+        "id":7,
+        "question":"hey this is level 3 question 2",
+        "o1":"option 1",
+        "o2":"option 2",
+        "o3":"option 3",
+        "o4":"option 4",
+        "correct":"option 2",
+        "level":3
+    }
+]

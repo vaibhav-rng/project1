@@ -10,13 +10,12 @@ html, body{
 
 .box
 {
-    border: 2px solid black ;
+    border: none ;
     width: 500px;
     height: 500;
     text-align: center;
     background-color: white;
-    border-radius: 10px;
-    border-color: rgb(201, 165, 201);  /* here */
+    border-radius: 10px; 
 }
 
 .textbx

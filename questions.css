@@ -2,9 +2,6 @@
 	margin: 0;
 	padding: 0;
 }
-body{
-	background-color: rgb(201, 165, 201);
-}
 #topnav{
 	padding: 1px;
 }
@@ -34,7 +31,6 @@ body{
 	padding: 10px;
 }
 #timer{
-	background-color: rgb(201, 165, 201);
 	border: 2px solid white;
 	border-radius: 16px;
 	margin: 5px;
@@ -63,7 +59,6 @@ body{
 	border-radius: 12px;
 	margin:5% 10%;
 	height: 400px;
-    box-shadow: 5px 5px 30px 15px rgb(139, 78, 139);
 }
 .topn:hover {
 	background-color: rgb(139, 78, 139);
