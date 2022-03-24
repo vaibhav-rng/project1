@@ -35,14 +35,14 @@ html, body{
   border-radius: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: rgb(170, 104, 170);  /* here */
+  background-color: #1f2533;  /* here */
   color: white;
   font-weight: 800;
   border:hidden;  
 }
 .btn:hover
 {
-    background-color: rgb(139, 78, 139); 
+    background-color: #0b1b3d; 
     cursor: pointer;
 }
 
