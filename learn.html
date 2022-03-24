@@ -19,7 +19,7 @@
             vertical-align: middle;
             text-align: center;
         }
-
+        
         .btn {
             padding: 5px;
             border-radius: 10px;
@@ -31,12 +31,12 @@
             font-weight: 800;
             border: hidden;
         }
-
+        
         .btn:hover {
             background-color: #1f2533;
             cursor: pointer;
         }
-
+        
         .textbx {
             padding: 10px;
             background-color: white;
@@ -46,19 +46,19 @@
             font-family: monospace;
             /* here */
         }
-
+        
         #main {
             width: cover;
             height: 300px;
             border-radius: 10px;
             background-color: #3F485B;
         }
-
+        
         .textbx:focus {
             background-color: rgb(199, 195, 195);
             outline: none;
         }
-
+        
         .topn {
             float: left;
             padding: 5px;
@@ -69,7 +69,7 @@
             font-weight: 100;
             margin-top: 2px;
         }
-
+        
         .topn:hover {
             background-color: #262e3f;
             cursor: pointer;
@@ -80,21 +80,42 @@
     <script>
         var count = 0
 
+        function totEle() {
+            document.getElementById("totE").textContent = main.childElementCount
+        }
+
         function reduce(item) {
             item.style = "width:60px;height:45px;font-size:35px;margin:20px"
         }
 
-        function add() {
+        function add(x, inp = document.getElementById("inp").value) {
             count++;
             var a = document.createElement("box");
             var sp = document.createElement("span");
             var ind = document.createElement("span");
-            var inp = document.getElementById("inp");
+            var inp2 = document.getElementById("inp")
             var main = document.getElementById("main")
-            if (inp.value.length == 0) {
+            if (inp.length == 0) {
                 alert("no element value found")
+            } else if (x == -1) {
+                sp.textContent = inp;
+                ind.textContent = "[0]";
+                ind.style = "font-size:12px; float:bottom;margin-top:5px"
+                a.appendChild(sp);
+                a.appendChild(ind);
+                if (main.childElementCount >= 8) {
+                    arr = Array.from(main.children);
+                    arr.forEach(reduce);
+                    a.style = "width:60px;height:45px;font-size:35px;margin:20px"
+                }
+                main.insertBefore(a, main.children[0])
+                if (main.childElementCount != 0) {
+                    arr = Array.from(main.children);
+                    arr.slice(1).forEach(incIndex)
+                }
+                inp2.value = "";
             } else {
-                sp.textContent = inp.value;
+                sp.textContent = inp;
                 ind.textContent = "[" + main.childElementCount + "]";
                 ind.style = "font-size:12px; float:bottom;margin-top:5px"
                 a.appendChild(sp);
@@ -105,8 +126,9 @@
                     a.style = "width:60px;height:45px;font-size:35px;margin:20px"
                 }
                 main.appendChild(a);
-                inp.value = "";
+                inp2.value = "";
             }
+            totEle()
         }
 
         function reduceIndex(ele) {
@@ -116,19 +138,96 @@
             arr[1].textContent = "[" + (parseInt(x[1]) - 1) + "]";
         }
 
-        function remove() {
+        function incIndex(ele) {
+            main = document.getElementById("main")
+            arr = Array.from(ele.children)
+            x = (arr[1].textContent)
+            arr[1].textContent = "[" + (parseInt(x[1]) + 1) + "]";
+        }
+
+        function remove(x) {
             main = document.getElementById("main")
             if (main.childElementCount == 0) {
                 alert("Empty array!")
-            } else {
+            } else if (x == 0) {
                 a = document.getElementsByTagName("box");
                 a[0].remove()
+                count--
                 if (main.childElementCount != 0) {
                     arr = Array.from(main.children);
                     arr.forEach(reduceIndex)
                 }
-            }
+            } else if (x == -1) {
+                var n = main.childElementCount
+                a = document.getElementsByTagName("box");
+                a[n - 1].remove()
+                count--
+            } else {
+                var x = document.getElementById("Dinp ")
+                var i
+                var flag = false
+                a = document.getElementsByTagName("box");
+                for (i = 0; i < main.childElementCount; i++) {
+                    if (a[i].children[0].textContent == x.value) {
+                        a[i].remove()
+                        if (main.childElementCount != 0) {
+                            arr = Array.from(main.children);
+                            arr.slice(i).forEach(reduceIndex)
+                        }
+                        count--
+                        i = -1
+                        break
+                    }
+                }
+                if (i != -1) {
+                    alert("Element not found.")
+                }
 
+            }
+            totEle()
+            document.getElementById("Dinp ").value = ""
+        }
+
+        function sortArr(x) {
+            main = document.getElementById("main")
+            a = Array()
+            for (i = 0; i < main.childElementCount; i++) {
+                a.push(main.children[i].children[0].textContent)
+            }
+            while (main.firstChild) {
+                main.removeChild(main.firstChild);
+            }
+            if (x) {
+                a.sort()
+            } else {
+                a.sort().reverse()
+            }
+            for (i = 0; i < a.length; i++) {
+                add(0, a[i])
+            }
+        }
+
+        function search() {
+            flag = false
+            inp = document.getElementById("Sinp")
+            main = document.getElementById("main")
+            if (main.childElementCount == 0) {
+                alert("Empty Array!!")
+            } else if (inp.value == "") {
+                alert("Please enter the search element!")
+            } else {
+                for (i = 0; i < main.childElementCount; i++) {
+                    if (main.children[i].children[0].textContent == inp.value) {
+                        alert("Element is found at location " + (i + 1))
+                        flag = true
+                        break
+                    }
+                }
+                if (!flag) {
+                    alert("Element not present!")
+                }
+            }
+            inp.value = ""
         }
     </script>
 </head>
@@ -144,39 +243,39 @@
     </div>
     <br>
     <br>
-    <h2 style="text-align: center;font-family:monospace; margin-top: 30px; font-weight:800;">Total Elements:<span
-            style="color:rgb(66, 202, 66);">10</span></h2>
+    <h2 style="text-align: center;font-family:monospace; margin-top: 30px; font-weight:800;">Total Elements:<span style="color:rgb(66, 202, 66);">10</span></h2>
     <section id="main"></section>
     <br>
     <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;">
         <div style="margin-left: 30px; padding-top: 10px; font-family: monospace; color: white;">
             <label style="font-size:x-large;">INSERTION: </label>
             <input type="text" class="textbx" id="inp" placeholder="Enter the element">
-            <button class="btn" onclick="add()" ">ADD</button>
-      <button class=" btn " onclick=" add() ">Add at the start</button>
-      <button class=" btn " onclick=" add() ">Add at the end</button>
+            <button class="btn" onclick="add()">ADD</button>
+            <button class="btn " onclick="add(-1) ">Add at the start</button>
+            <button class="btn " onclick="add() ">Add at the end</button>
 
-      <br>
-      <br>
-      <label style=" font-size:x-large; ">DELETION: </label>
-      <input class=" textbx " style=" margin-left: 10px; " type=" text " id=" inp " placeholder=" Enter the element ">
-      <button class=" btn " onclick=" remove() ">REMOVE</button> 
-    
-      <button class=" btn " onclick=" remove() ">Delete at the End</button>
-      <button class=" btn " onclick=" remove() ">Delete at the Start</button>
-      <br>
-      <br>
-      <label style=" font-size:x-large; " >SORTING: </label>
-      <button class=" btn " style=" margin-left: 20px; " onclick=" remove() ">Assending</button>
-      <button class=" btn "  onclick=" remove() ">Decending</button>
-      <br>
-      <br>
-      <label style=" font-size:x-large; ">Search: </label>
-       <input class=" textbx " style=" margin-left: 30px; " type=" text " id=" inp " placeholder=" Enter the element ">
-      <button class=" btn " onclick=" remove() ">Search</button>
-      
-   </div>
-</div>
+            <br>
+            <br>
+            <label style="font-size:x-large; ">DELETION: </label>
+            <input class="textbx " style="margin-left: 10px; " type="text " id="Dinp " placeholder="Enter the element ">
+            <button class="btn " onclick="remove() ">REMOVE</button>
+
+
+            <button class="btn " onclick="remove(0) ">Delete at the Start</button>
+            <button class="btn " onclick="remove(-1) ">Delete at the End</button>
+            <br>
+            <br>
+            <label style="font-size:x-large; ">SORTING: </label>
+            <input type="radio" class="btn " name="abc" style="margin-left: 20px; " onclick="sortArr(true) ">Assending
+            <input type="radio" class="btn " name="abc" onclick="sortArr(false) ">Decending
+            <br>
+            <br>
+            <label style="font-size:x-large; ">Search: </label>
+            <input class="textbx " style="margin-left: 30px; " type="text " id="Sinp" placeholder="Enter the element ">
+            <button class="btn " onclick="search() ">Search</button>
+
+        </div>
+    </div>
 
 </body>
 
