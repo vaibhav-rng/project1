@@ -189,6 +189,7 @@
         }
 
         function sortArr(x) {
+            flag = true;
             main = document.getElementById("main")
             a = Array()
             for (i = 0; i < main.childElementCount; i++) {
@@ -197,10 +198,35 @@
             while (main.firstChild) {
                 main.removeChild(main.firstChild);
             }
+            for (var i = 0; i < a.length; i++) {
+                if (isNaN(a[i])) {
+                    flag = false
+                    break
+                }
+            }
+            // if (flag) {
+            //     a = a.map(str => {
+            //         return Number(str);
+            //     });
+            // }
             if (x) {
-                a.sort()
+                if (flag) {
+                    a.sort(function(a, b) {
+                        return a - b;
+                    });
+                } else {
+                    a.sort()
+                }
+                console.log("decending")
             } else {
-                a.sort().reverse()
+                if (flag) {
+                    a.sort(function(a, b) {
+                        return a - b;
+                    });
+                    a.reverse()
+                } else {
+                    a.sort().reverse()
+                }
             }
             for (i = 0; i < a.length; i++) {
                 add(0, a[i])
