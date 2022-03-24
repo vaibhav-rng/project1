@@ -53,7 +53,7 @@
 		{
 			background-color:#B8405E;
 			color:white;
-			left:-10px;
+			right:80px;
 		}
 		.btn1
 		{
@@ -160,11 +160,11 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 	
 	<br>
 	<div class="navi">
-        <nav>
-            <a href="#">Home</a>
-            <a href="level.html">TAKE QUIZ</a>
-            <a href="#">LEARN</a>
-            <a href="#">SIMULATION</a>
+		<nav>
+            <a href="home.html">Home</a>
+            <a href="register.php">TAKE QUIZ</a>
+            <a href="">LEARN</a>
+            <a href="learn.html">SIMULATION</a>
             <a href="about.html">ABOUT US</a>
             <div class="animation start-home"></div>
         </nav>
@@ -266,12 +266,12 @@ nav .start-contact, a:nth-child(5):hover~.animation {
   		{
 			document.getElementById("1").style.display="inline"
 			document.getElementById("2").style.display="inline"
-			document.getElementById("1").style.left="860px"
+			document.getElementById("1").style.left="750px"
  		}  
   		if (n == 1) 
   		{
 			document.getElementById("2").style.display="none"  
-			document.getElementById("1").style.left="910px" 
+			document.getElementById("1").style.left="913px" 
   			slideIndex = 1
   		}
   		for (i = 0; i < slides.length; i++)

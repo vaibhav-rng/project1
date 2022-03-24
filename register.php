@@ -91,15 +91,16 @@ nav .start-contact, a:nth-child(5):hover~.animation {
     <body style=" background-color:#3F485B">
     <div class="navi">
         <nav>
-            <a href="#">Home</a>
-            <a href="level.html">TAKE QUIZ</a>
-            <a href="#">LEARN</a>
-            <a href="#">SIMULATION</a>
+            <a href="home.html">Home</a>
+            <a href="register.php">TAKE QUIZ</a>
+            <a href="">LEARN</a>
+            <a href="learn.html">SIMULATION</a>
             <a href="about.html">ABOUT US</a>
             <div class="animation start-home"></div>
         </nav>
     </div>
-    <div class="container">
+        <h1 style="top: 10px;;position:absolute;left:360px;font-size:110px;color:white">Array Quiz</h1>
+    <div class="container">   
         <div class="box">
           <h1 style="font-family: monospace;">hello!! Guest</h1>
           <input type="text" class="textbx" placeholder="Enter your Name" style="text-align: center;" id="myText" >
