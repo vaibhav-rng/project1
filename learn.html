@@ -372,39 +372,41 @@
 
     <br>
     <br>
+    <h1 style="text-align: center;margin-top: 0px;">ADT Array Operations</h1>
     <h2 style="text-align: center;font-family:monospace; margin-top: 0px; font-weight:800;">Total Elements:<span id="totE" style="color:rgb(66, 202, 66);">0</span></h2>
     <section id="main"></section>
     <br>
-    <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;">
-        <div style="margin-left: 30px; padding-top: 10px; font-family: monospace; color: white;">
-            <label style="font-size:x-large;">INSERTION: </label>
-            <input type="text" class="textbx" id="inp" placeholder="Enter the element">
-            <button class="btn" onclick="add()">ADD</button>
-            <button class="btn " onclick="add(-1) ">Add at the start</button>
-            <button class="btn " onclick="add() ">Add at the end</button>
+    <h2 style="text-align: center;font-size: 28px;margin-top: 0;">Operations:</h3>
+        <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;">
+            <div style="margin-left: 30px; padding-top: 10px; font-family: monospace; color: white;">
+                <label style="font-size:x-large;">INSERTION: </label>
+                <input type="text" class="textbx" id="inp" placeholder="Enter the element">
+                <button class="btn" onclick="add()">ADD</button>
+                <button class="btn " onclick="add(-1) ">Add at the start</button>
+                <button class="btn " onclick="add() ">Add at the end</button>
 
-            <br>
-            <br>
-            <label style="font-size:x-large; ">DELETION: </label>
-            <input class="textbx " style="margin-left: 10px; " type="text " id="Dinp " placeholder="Enter the element ">
-            <button class="btn " onclick="remove() ">REMOVE</button>
+                <br>
+                <br>
+                <label style="font-size:x-large; ">DELETION: </label>
+                <input class="textbx " style="margin-left: 10px; " type="text " id="Dinp " placeholder="Enter the element ">
+                <button class="btn " onclick="remove() ">REMOVE</button>
 
 
-            <button class="btn " onclick="remove(0) ">Delete at the Start</button>
-            <button class="btn " onclick="remove(-1) ">Delete at the End</button>
-            <br>
-            <br>
-            <label style="font-size:x-large; ">SORTING: </label>
-            <input type="radio" class="btn " name="abc" style="margin-left: 20px; " onclick="sortArr(true) ">Assending
-            <input type="radio" class="btn " name="abc" onclick="sortArr(false) ">Decending
-            <br>
-            <br>
-            <label style="font-size:x-large; ">Search: </label>
-            <input class="textbx " style="margin-left: 30px; " type="text " id="Sinp" placeholder="Enter the element ">
-            <button class="btn " onclick="search() ">Search</button>
+                <button class="btn " onclick="remove(0) ">Delete at the Start</button>
+                <button class="btn " onclick="remove(-1) ">Delete at the End</button>
+                <br>
+                <br>
+                <label style="font-size:x-large; ">SORTING: </label>
+                <input type="radio" class="btn " name="abc" style="margin-left: 20px; " onclick="sortArr(true) ">Assending
+                <input type="radio" class="btn " name="abc" onclick="sortArr(false) ">Decending
+                <br>
+                <br>
+                <label style="font-size:x-large; ">Search: </label>
+                <input class="textbx " style="margin-left: 30px; " type="text " id="Sinp" placeholder="Enter the element ">
+                <button class="btn " onclick="search() ">Search</button>
 
+            </div>
         </div>
-    </div>
 
 </body>
 
