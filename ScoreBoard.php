@@ -183,10 +183,11 @@ nav .start-contact, a:nth-child(5):hover~.animation {
         <span onclick="window.location.href='./learn.html'" class="topn">Simulation</span>
         <span class="topn">contact us</span>
     </div>   -->
+    <div >
     
-    <h1 class="h1">ScoreBoard</h1>
-    <div class="container">
-        <table>
+    <div style="margin: 27px auto 0;" class="container">
+    <h2  style="font-family:monospace;text-align:center;font-weight:50px;padding-top:20px;font-size:54px;">ScoreBoard</h2>
+        <table style="margin-top: -30px;">
             <tr>
                 <th>Rank</th>
                 <th>Performers</th>
@@ -212,6 +213,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 
         </table>
     </div>
+  </div>
 </body>
 
 </html>

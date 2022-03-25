@@ -99,7 +99,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
             <div class="animation start-home"></div>
         </nav>
     </div>
-        <h1 style="top: 10px;;position:absolute;left:360px;font-size:110px;color:white">Array Quiz</h1>
+        <h1 style="text-align:center;font-size:110px;color:white;margin-bottom:-200px">Array Quiz</h1>
     <div class="container">   
         <div class="box">
           <h1 style="font-family: monospace; text-align:middle">hello!! Guest</h1>
