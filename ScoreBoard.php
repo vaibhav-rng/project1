@@ -169,8 +169,8 @@ nav .start-contact, a:nth-child(5):hover~.animation {
         <nav>
             <a href="home.html">Home</a>
             <a href="register.php">TAKE QUIZ</a>
-            <a href="learn.html">LEARN</a>
-            <a href="">SIMULATION</a>
+            <a href="">LEARN</a>
+            <a href="learn.html">SIMULATION</a>
             <a href="about.html">ABOUT US</a>
             <div class="animation start-home"></div>
         </nav>
