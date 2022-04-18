@@ -321,6 +321,11 @@
             for (i = 0; i < a.length; i++) {
                 add(0, a[i])
             }
+            wt = setInterval(wait => {
+                document.getElementById("r1").checked = false;
+                document.getElementById("r2").checked = false;
+                clearInterval(wt)
+            }, 2000)
         }
 
         // function clearBox() {
@@ -385,11 +390,8 @@
         }
 
         function rad() {
-            wt = setInterval(wait => {
-                document.getElementById("r1").checked = false;
-                document.getElementById("r2").checked = false;
-                clearInterval(wt)
-            }, 3000)
+
+
 
         }
     </script>
@@ -424,7 +426,7 @@
     <section id="main"></section>
     <br>
     <h2 style="text-align: center;font-size: 28px;margin-top: 0;">Operations:</h3>
-        <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;" onclick="rad()">
+        <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;">
             <div style="margin-left: 30px; padding-top: 10px; font-family: monospace; color: white;">
                 <label style="font-size:x-large;">INSERTION: </label>
                 <input type="text" class="textbx" id="inp" placeholder="Enter the element">
