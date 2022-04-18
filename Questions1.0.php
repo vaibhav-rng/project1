@@ -156,8 +156,10 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 		</style>
 
 </head>
-<body style="background-color: #3F485B;">
-	
+<body onLoad="checkRefresh()"  style="background-color: #3F485B;">
+	<form name="refreshForm">
+		<input type="hidden" name="visited" value="" />
+	</form>	
 	<br>
 	<div class="navi">
 		<nav>
@@ -177,8 +179,10 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 			<input type="hidden" id="scoredForm" name="scored" value=''>
 			<input type="hidden" id="nameForm" name="name" value=<?php echo $_GET['name'] ?>>
 			<input type="hidden" id="nameForm" name="difficulty" value=<?php echo $_GET['val'] ?>>
-
-			<input type="submit"   onclick="onSubmit()"
+			<div style="display:flex;justify-content: center;">
+				<div id="time" style="border:solid;padding:10px;color:green;border-color:white;border-radius:20%">10:00</div>
+			</div>
+			<input type="submit" id="submit"  onclick="onSubmit()"
 			style="cursor:pointer;margin-left:1100px; background-color: #85C88A; font-size:xx-large; padding:11px; padding-left: 10px; padding-right: 10px;border:none; border-radius: 10px; color: white; font-family: monospace;">	 
 	    	</input>
 		</form>
@@ -211,7 +215,6 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 				  </div>
 				</div>
 				  </form>
-				 
 				</div>
 				
 
@@ -223,7 +226,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 
 
 	<script>
-
+		
 		function bg(n)
 		{
 		 var opt=document.getElementsByClassName("btn1")
@@ -235,6 +238,9 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 		var slideIndex = 1;
 		showSlides(slideIndex);
 
+		var slides1 = document.getElementsByClassName("mySlides");
+		console.log(slides1.length)
+
 		function plusSlides(n)
 		{
 		var slides = document.getElementsByClassName("mySlides");
@@ -242,6 +248,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 		{
 		 showSlides(slideIndex += n);
 		}
+
 		}
 		function minusSlides(n)
 		{
@@ -311,6 +318,65 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 			document.getElementById("scoredForm").value = window.score1;
 
 		}
+		
+
+
+		var url_string =window.location.href
+		var url = new URL(url_string);
+		var val = url.searchParams.get("val");
+	
+
+	   
+		if(val==1)
+		{
+			document.getElementById("time").style.display="none"
+		}
+		else if (val==2)
+		{
+		let time=299
+
+		setInterval(timerCD,1000)
+		console.log(time)
+		
+
+		 function timerCD()
+		 {
+			 if(time===0)
+			 {
+				document.getElementById("formSubmit").submit();
+			 }
+			 let minute=Math.floor(time/60)
+			 let seconds=time%60
+			 document.getElementById("time").innerHTML = `${minute}:${seconds}`
+		 	time--;
+		 }
+		}
+		else if(val==3)
+		{
+		let time=200
+
+		setInterval(timerCD,1000)
+		console.log(time)
+		
+
+		 function timerCD()
+		 {
+			 if(time===0)
+			 {
+				document.getElementById("submit").click();
+			 }
+			 let minute=Math.floor(time/60)
+			 let seconds=time%60
+			 document.getElementById("time").innerHTML = `${minute}:${seconds}`
+		 	time--;
+		 }
+			
+
+
+
+		}
+
+		
 	</script>
 </body>
 </html>
