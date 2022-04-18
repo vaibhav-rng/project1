@@ -323,8 +323,43 @@
             }
         }
 
+        // function clearBox() {
+        //     for (i = 0; i < main.childElementCount; i++) {
+        //         main.children[i].style = "border: 2px solid white"
+        //     }
+        // }
+
+        function searchAnim(val) {
+            var i = 0
+            lp = setInterval(loop => {
+                if (i >= main.childElementCount) {
+                    alert("Element not found!")
+                    main.children[i - 1].style = "border:2px solid white"
+                    clearInterval(lp)
+                } else {
+                    if (i > 0) {
+                        main.children[i - 1].style = "border: 2px solid white"
+                    }
+                    if (main.children[i].children[0].textContent == val) {
+                        flag = true
+                        main.children[i].style = "border:2px solid green"
+                        document.getElementById("Sop").innerHTML = "Element is found at location " + (i + 1)
+                        clearInterval(lp)
+                        g = setInterval(fun => {
+                            main.children[i - 1].style = "border:2px solid white"
+                            document.getElementById("Sop").innerHTML = ""
+                        }, 2000)
+                    } else {
+                        main.children[i].style = "border:2px solid red"
+                    }
+                    i++
+                }
+            }, 1000)
+
+
+        }
+
         function search() {
-            flag = false
             inp = document.getElementById("Sinp")
             main = document.getElementById("main")
             if (main.childElementCount == 0) {
@@ -332,18 +367,30 @@
             } else if (inp.value == "") {
                 alert("Please enter the search element!")
             } else {
-                for (i = 0; i < main.childElementCount; i++) {
-                    if (main.children[i].children[0].textContent == inp.value) {
-                        alert("Element is found at location " + (i + 1))
-                        flag = true
-                        break
-                    }
-                }
-                if (!flag) {
-                    alert("Element not present!")
-                }
+                searchAnim(inp.value)
+
+                // for (i = 0; i < main.childElementCount; i++) {
+                //     main.children[i].ani
+                //     if (main.children[i].children[0].textContent == inp.value) {
+                //         main.children[i].style = "border:2px solid green";
+                //         alert("Element is found at location " + (i + 1))
+                //         flag = true
+                //         break
+                //     }
+                // }
+
+                inp.value = ""
+
             }
-            inp.value = ""
+        }
+
+        function rad() {
+            wt = setInterval(wait => {
+                document.getElementById("r1").checked = false;
+                document.getElementById("r2").checked = false;
+                clearInterval(wt)
+            }, 3000)
+
         }
     </script>
 </head>
@@ -377,7 +424,7 @@
     <section id="main"></section>
     <br>
     <h2 style="text-align: center;font-size: 28px;margin-top: 0;">Operations:</h3>
-        <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;">
+        <div style="  background-color: #3F485B;border-radius: 10px;height: 210px;" onclick="rad()">
             <div style="margin-left: 30px; padding-top: 10px; font-family: monospace; color: white;">
                 <label style="font-size:x-large;">INSERTION: </label>
                 <input type="text" class="textbx" id="inp" placeholder="Enter the element">
@@ -397,13 +444,14 @@
                 <br>
                 <br>
                 <label style="font-size:x-large; ">SORTING: </label>
-                <input type="radio" class="btn " name="abc" style="margin-left: 20px; " onclick="sortArr(true) ">Assending
-                <input type="radio" class="btn " name="abc" onclick="sortArr(false) ">Decending
+                <input type="radio" class="btn " name="abc" style="margin-left: 20px; " onclick="sortArr(true) " id="r1">Assending
+                <input type="radio" class="btn " name="abc" onclick="sortArr(false) " id="r2">Decending
                 <br>
                 <br>
                 <label style="font-size:x-large; ">Search: </label>
                 <input class="textbx " style="margin-left: 30px; " type="text " id="Sinp" placeholder="Enter the element ">
                 <button class="btn " onclick="search() ">Search</button>
+                <span id="Sop" style="font-size: 14px;"></span>
 
             </div>
         </div>
