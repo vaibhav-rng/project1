@@ -367,7 +367,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 			 }
 			 let minute=Math.floor(time/60)
 			 let seconds=time%60
-			 document.getElementById("time").innerHTML = `${minute}:${seconds}`
+			 document.getElementById("time").innerHTML = `${minute} :sacc ${seconds}`
 		 	time--;
 		 }
 			
