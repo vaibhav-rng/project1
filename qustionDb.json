@@ -52,164 +52,110 @@
     },
     {
         "id":6,
-        "question":"If S is an array of 80 characters, then the value assigned to S through the statement scanf with input 12345 would be",
-        "o1":"nothing since 12345 is an integer",
-        "o2":"S is an illegal name for string",
-        "o3":"12345",
-        "o4":"%s cannot be used for reading in values of S",
-        "correct":"12345",
-        "level":1
+        "question":"float marks[3] = {90.5, 92.5, 96.5}; int a=0; while(a<3) { printf(.2f,, marks[a]); a++;",
+        "o1":"90.5 92.5 96.5",
+        "o2":"90.50 92.50 96.50",
+        "o3":" 0.00 0.00 0.00",
+        "o4":"Compiler error",
+        "correct":"90.50 92.50 96.50",
+        "level":2
     },
     {
         "id":7,
-        "question":"Size of the array need not be specified, when",
-        "o1":"It is a formal parameter",
-        "o2":"It is a declaratrion",
-        "o3":"Initialization is a part of definition",
-        "o4":"At run Time",
-        "correct":"Initialization is a part of definition",
-        "level":1
+        "question":"int a[3] = {20,30,40}; a[0]++; int i=0; while(i<3) { printf(%d, i[a]); i++; }",
+        "o1":"20 30 40",
+        "o2":"41 30 20",
+        "o3":"21 30 40",
+        "o4":"None of the above",
+        "correct":"21 30 40",
+        "level":2
+    },
+
+    {
+        "id":8,
+        "question":"what will be the size of myarray  </br> typdef char x[10]  xmyArray[5];",
+        "o1":"15",
+        "o2":"10",
+        "o3":"50",
+        "o4":"10",
+        "correct":"50",
+        "level":2
+    },
+    
+    {
+        "id":9,
+        "question":"Which one of the following is the size of int arr[9] assuming that int is of 4 bytes?",
+        "o1":"9",
+        "o2":"36",
+        "o3":"35",
+        "o4":"None of the above",
+        "correct":"36",
+        "level":2
     }
-    ,{
-        "id":1,
-        "question":" Which of these best describes an array?",
-        "o1":" A data structure that shows a hierarchical behavior",
-        "o2":"Container of objects of similar types",
-        "o3":"Arrays are immutable once initialised",
-        "o4":"Array is not a data structure",
-        "correct":"Container of objects of similar types",
-        "level":2
-
-    },
+    ,
     {
-        "id":2,
-        "question":"How do you initialize an array in C",
-        "o1":"int arr[3] = (1,2,3);",
-        "o2":" int arr(3) = {1,2,3}",
-        "o3":"int arr[3] = {1,2,3};",
-        "o4":"int arr(3) = (1,2,3);",
-        "correct":"int arr[3] = {1,2,3}",
+        "id":10,
+        "question":"In C, if you pass an array as an argument to a function, what actually gets passed?"   ,
+        "o1":"Value of elements in array",
+        "o2":"First element of the array",
+        "o3":"Base address of the array",
+        "o4":"Address of the last element of array",
+        "correct":"Base address of the array",
         "level":2
     },
     {
-        "id":3,
-        "question":"What is an Array in C language.?",
-        "o1":"A group of elements of same data type",
-        "o2":"An array contains more than one element",
-        "o3":"Array elements are stored in memory in continuous or contiguous locations.",
-        "o4":"All the above.",
-        "correct":"All the above.",
-        "level":2
-    },
-    {
-        "id":4,
-        "question":"What are the Types of Arrays?",
-        "o1":"int, float, char, double",
-        "o2":"struct, enum",
-        "o3":"long",
-        "o4":"option 4",
-        "correct":"All the above",
-        "level":2
-    },
-    {
-        "id":5,
-        "question":"What is the maximun number of dimensions an array in C may have?",
-        "o1":"1",
-        "o2":"9",
-        "o3":"16",
-        "o4":"Theoratically no limit. The only practical limits are memory size and compilers",
-        "correct":"Theoratically no limit. The only practical limits are memory size and compilers",
-        "level":2
-    },
-    {
-        "id":6,
-        "question":"If S is an array of 80 characters, then the value assigned to S through the statement scanf with input 12345 would be",
-        "o1":"nothing since 12345 is an integer",
-        "o2":"S is an illegal name for string",
-        "o3":"12345",
-        "o4":"%s cannot be used for reading in values of S",
-        "correct":"12345",
-        "level":2
-    },
-    {
-        "id":7,
-        "question":"Size of the array need not be specified, when",
-        "o1":"It is a formal parameter",
-        "o2":"It is a declaratrion",
-        "o3":"Initialization is a part of definition",
-        "o4":"At run Time",
-        "correct":"Initialization is a part of definition",
-        "level":2
-    },
-    {
-        "id":1,
-        "question":" Which of these best describes an array?",
-        "o1":" A data structure that shows a hierarchical behavior",
-        "o2":"Container of objects of similar types",
-        "o3":"Arrays are immutable once initialised",
-        "o4":"Array is not a data structure",
-        "correct":"Container of objects of similar types",
-        "level":3
-
-    },
-    {
-        "id":2,
-        "question":"How do you initialize an array in C",
-        "o1":"int arr[3] = (1,2,3);",
-        "o2":" int arr(3) = {1,2,3}",
-        "o3":"int arr[3] = {1,2,3};",
-        "o4":"int arr(3) = (1,2,3);",
-        "correct":"int arr[3] = {1,2,3}",
+        "id":11,
+        "question":"What is the output of C Program with arrays and pointers.? int main() { int a[3] = {20,30,40}; int (*p)[3]; p=&a; printf(%d, (*p)[0]); }"   ,
+        "o1":"20",
+        "o2":"0",
+        "o3":"address of element 20",
+        "o4":"Error",
+        "correct":"20",
         "level":3
     },
     {
-        "id":3,
-        "question":"What is an Array in C language.?",
-        "o1":"A group of elements of same data type",
-        "o2":"An array contains more than one element",
-        "o3":"Array elements are stored in memory in continuous or contiguous locations.",
-        "o4":"All the above.",
-        "correct":"All the above.",
+        "id":12,
+        "question":"What is the output of C program with arrays and pointers.? int main() { int a[3] = {20,30,40}; int *p[3]; p=&a; printf(%d, *p[0]); }"   ,
+        "o1":"20",
+        "o2":"address of element 20",
+        "o3":"Garbage value",
+        "o4":"Error",
+        "correct":"Error",
         "level":3
     },
     {
-        "id":4,
-        "question":"What are the Types of Arrays?",
-        "o1":"int, float, char, double",
-        "o2":"struct, enum",
-        "o3":"long",
-        "o4":"option 4",
-        "correct":"All the above",
+        "id":13,
+        "question":"What is the output of C program with arrays and pointers.? int main() { int a[3] = {20,30,40}; printf(%d, *(a+1)); }"   ,
+        "o1":"20",
+        "o2":"30",
+        "o3":"40",
+        "o4":"60",
+        "correct":"30",
         "level":3
     },
     {
-        "id":5,
-        "question":"What is the maximun number of dimensions an array in C may have?",
-        "o1":"1",
-        "o2":"9",
-        "o3":"16",
-        "o4":"Theoratically no limit. The only practical limits are memory size and compilers",
-        "correct":"Theoratically no limit. The only practical limits are memory size and compilers",
+        "id":14,
+        "question":"void change(int[]); int main() { int a[3] = {20,30,40}; change(a); printf(%d %d, *a, a[0]); } void change(int a[]) { a[0] = 10; }"   ,
+        "o1":"20 20",
+        "o2":"10 20",
+        "o3":"10 10",
+        "o4":"20 30",
+        "correct":"10 10",
         "level":3
     },
     {
-        "id":6,
-        "question":"If S is an array of 80 characters, then the value assigned to S through the statement scanf with input 12345 would be",
-        "o1":"nothing since 12345 is an integer",
-        "o2":"S is an illegal name for string",
-        "o3":"12345",
-        "o4":"%s cannot be used for reading in values of S",
-        "correct":"12345",
-        "level":3
-    },
-    {
-        "id":7,
-        "question":"Size of the array need not be specified, when",
-        "o1":"It is a formal parameter",
-        "o2":"It is a declaratrion",
-        "o3":"Initialization is a part of definition",
-        "o4":"At run Time",
-        "correct":"Initialization is a part of definition",
+        "id":15,
+        "question":"What does the following declaration mean? </br>int (*ptr)[10];"   ,
+        "o1":"ptr is array of pointers to 10 integers",
+        "o2":"ptr is a pointer to an array of 10 integers",
+        "o3":"ptr is an array of 10 integers",
+        "o4":"ptr is an pointer to array",
+        "correct":"ptr is a pointer to an array of 10 integers",
         "level":3
     }
+
+
+
+
+     
 ]
