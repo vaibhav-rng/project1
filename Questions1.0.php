@@ -347,7 +347,13 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 			 }
 			 let minute=Math.floor(time/60)
 			 let seconds=time%60
-			 document.getElementById("time").innerHTML = `${minute}:${seconds}`
+			 if(seconds<10){
+				document.getElementById("time").innerHTML = `${minute}:0${seconds}`
+			 }
+			 else{
+				document.getElementById("time").innerHTML = `${minute}:${seconds}`
+			 }
+			 
 		 	time--;
 		 }
 		}
@@ -367,7 +373,12 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 			 }
 			 let minute=Math.floor(time/60)
 			 let seconds=time%60
-			 document.getElementById("time").innerHTML = `${minute}:${seconds}`
+			 if(seconds<10){
+				document.getElementById("time").innerHTML = `${minute}:0${seconds}`
+			 }
+			 else{
+				document.getElementById("time").innerHTML = `${minute}:${seconds}`
+			 }
 		 	time--;
 		 }
 			
