@@ -101,7 +101,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
     </div>
         <h1 style="text-align:center;font-size:110px;color:white;margin-bottom:-200px">Array Quiz</h1>
     <div class="container">   
-        <div style="" class="box">
+        <div class="box">
           <h1 style="font-family: monospace; ">hello!! Guest</h1>
           <input type="text" class="textbx" placeholder="Enter your Name" style="text-align: center;" id="myText" >
           <a  href="level.php" onclick="fun();location.href=this.href+'?name='+val;return false"  style="background-color:black; display: block; width:60px;margin-left: 195px; margin-top: 20px; margin-bottom: 22px;text-decoration:none" class="btn">Enter</a>
