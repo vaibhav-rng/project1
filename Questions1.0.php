@@ -180,7 +180,7 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 			<input type="hidden" id="nameForm" name="name" value=<?php echo $_GET['name'] ?>>
 			<input type="hidden" id="nameForm" name="difficulty" value=<?php echo $_GET['val'] ?>>
 			<div style="display:flex;justify-content: center;">
-				<div id="time" style="border:solid;font-size:24px;padding:15px;color:green;border-color:white;border-radius:20%">5:00</div>
+				<div id="time" style="border:solid;font-size:24px;padding:15px;color:green;border-color:white;border-radius:20%"></div>
 			</div>
 			<input type="submit" id="submit"  onclick="onSubmit()"
 			style="cursor:pointer;margin-left:1100px;margin-top:-30px; background-color: #85C88A; font-size:xx-large; padding:11px; padding-left: 10px; padding-right: 10px;border:none; border-radius: 10px; color: white; font-family: monospace;">	 
@@ -359,6 +359,8 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 		}
 		else if(val==3)
 		{
+
+		document.getElementById("time").innerHTML = '3:22'
 		let time=200
 
 		setInterval(timerCD,1000)

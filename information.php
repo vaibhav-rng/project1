@@ -14,7 +14,7 @@
         <nav>
             <a href="home.html">Home</a>
             <a href="register.php">TAKE QUIZ</a>
-            <a href="information.html">LEARN</a>
+            <a href="information.php">LEARN</a>
             <a href="learn.html">SIMULATION</a>
             <a href="about.html">ABOUT US</a>
             <div class="animation start-home"></div>
@@ -51,20 +51,8 @@
             <p class="status error">Image(s) not found...</p> 
         <?php } ?>
 
-        <?php   
-                $res = $db->query("SELECT link FROM images WHERE id=2"); 
-         ?>
-        <?php if($res->num_rows > 0){ ?> 
-    
-        <?php while($row = $res->fetch_assoc()){ ?> 
-           $url = $row['link'];
-        <?php } ?> 
-        
-        <?php }else{ ?> 
-            <p class="status error">Image(s) not found...</p> 
-        <?php } ?>
 
-        <iframe width="450px" height="250" src="https://www.youtube.com/embed/<?php $url ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="450px" height="250" src="https://www.youtube.com/embed/bR0NYdmMg94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section><br><br>
     <section>
         <h2> ADT Array</h2>
